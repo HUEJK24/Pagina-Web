@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatClean - Auditor de Limpieza</title>
+  <!-- Fuente (ejemplo) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  >
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/inicio_secion.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Únete a WhatClean como Auditor de Limpieza</h1>
+
+    <!-- Toggle de "Crear cuenta" / "Iniciar sesión" -->
+    <div class="toggle-mode">
+      <label class="toggle-option">
+        <input type="radio" name="mode" value="signup" checked>
+        <span>Crear cuenta</span>
+      </label>
+      <label class="toggle-option">
+        <input type="radio" name="mode" value="login">
+        <span>Iniciar sesión</span>
+      </label>
+    </div>
+
+    <!-- FORMULARIO CREAR CUENTA -->
+    <form id="signupForm" class="form visible">
+      <div class="form-group">
+        <label for="signupEmail">Correo</label>
+        <input
+          type="email"
+          id="signupEmail"
+          name="signupEmail"
+          placeholder="Escribe un correo electrónico"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="signupPassword">Contraseña</label>
+        <input
+          type="password"
+          id="signupPassword"
+          name="signupPassword"
+          placeholder="Escribe una contraseña"
+          minlength="8"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="signupConfirm">Confirmar contraseña</label>
+        <input
+          type="password"
+          id="signupConfirm"
+          name="signupConfirm"
+          placeholder="Escribe de nuevo tu contraseña"
+          required
+        />
+      </div>
+
+      <div class="buttons-group">
+        <button type="button" class="btn-cancel">Cancelar</button>
+        <button type="submit" class="btn-primary">Crear cuenta</button>
+      </div>
+    </form>
+
+    <!-- FORMULARIO INICIAR SESIÓN (oculto por defecto) -->
+    <form id="loginForm" class="form hidden">
+      <div class="form-group">
+        <label for="loginEmail">Correo</label>
+        <input
+          type="email"
+          id="loginEmail"
+          name="loginEmail"
+          placeholder="Escribe un correo electrónico"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Contraseña</label>
+        <input
+          type="password"
+          id="loginPassword"
+          name="loginPassword"
+          placeholder="Escribe una contraseña"
+          required
+        />
+      </div>
+
+      <div class="form-group forgot-link">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <div class="buttons-group">
+        <button type="button" class="btn-cancel">Cancelar</button>
+        <button type="submit" class="btn-primary">Iniciar sesión</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

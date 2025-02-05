@@ -1,0 +1,159 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; 
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* CONTENEDOR PRINCIPAL */
+  .container {
+    max-width: 500px;
+    width: 90%;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  
+  .container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #eaeaea;
+  }
+  
+  /* TOGGLE CREAR CUENTA / INICIAR SESIÓN */
+  .toggle-mode {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .toggle-option {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+  }
+  .toggle-option input[type="radio"] {
+    accent-color: #8f54e2; /* color principal para el radio */
+  }
+  
+  /* FORMULARIO */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  /* Oculto por defecto */
+  .hidden {
+    display: none;
+  }
+  .visible {
+    display: flex;
+  }
+  
+  /* CAMPOS */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+  
+  .form-group input {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #66c;
+    padding: 0.7rem;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-size: 0.95rem;
+  }
+  .form-group input::placeholder {
+    color: #888;
+  }
+  .form-group input:focus {
+    border-color: #8f54e2;
+  }
+  
+  /* OLVIDASTE TU CONTRASEÑA */
+  .forgot-link {
+    text-align: right;
+  }
+  .forgot-link a {
+    color: #888;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .forgot-link a:hover {
+    color: #ccc;
+  }
+  
+  /* BOTONES */
+  .buttons-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Botón cancelar */
+  .btn-cancel {
+    background-color: #b20a0a;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  .btn-cancel:hover {
+    background-color: #961414;
+  }
+  
+  /* Botón primario (Crear cuenta / Iniciar sesión) */
+  .btn-primary {
+    background-color: #8f54e2;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #7842c0;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 480px) {
+    .toggle-mode {
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .buttons-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  

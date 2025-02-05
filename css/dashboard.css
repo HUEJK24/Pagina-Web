@@ -1,0 +1,336 @@
+/* ----------------------------------------------------
+   RESET & FUENTE BASE
+---------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* ----------------------------------------------------
+     SIDEBAR
+  ---------------------------------------------------- */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: #0c4e8b; /* color azul más oscuro */
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar__toggle {
+    display: none; /* En desktop no se muestra, lo usarías en responsive */
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .sidebar__profile {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar__profile-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #fff;
+  }
+  
+  .sidebar__profile-name {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar__profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .btn-icon {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Navegación lateral */
+  .sidebar__nav ul {
+    list-style: none;
+  }
+  
+  .sidebar__nav li {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar__nav a {
+    display: flex;
+    align-items: center;
+    color: #cfdfe8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar__nav a i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .sidebar__nav li.active a,
+  .sidebar__nav a:hover {
+    background-color: #094378;
+    color: #fff;
+  }
+  
+  /* ----------------------------------------------------
+     MAIN CONTENT
+  ---------------------------------------------------- */
+  .main-content {
+    margin-left: 260px; /* para no quedar debajo de la sidebar */
+    padding: 1.5rem;
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* ----------------------------------------------------
+     HEADER SUPERIOR
+  ---------------------------------------------------- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c4e8b;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .header__left p {
+    font-size: 0.9rem;
+  }
+  
+  .header__left span {
+    opacity: 0.8;
+  }
+  
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Filtros (Hoy, Mañana, etc.) */
+  .header__filters button {
+    background: #fff;
+    color: #0c4e8b;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .header__filters button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Notificaciones y perfil mini */
+  .btn-icon {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .header__profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header__profile-mini img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* ----------------------------------------------------
+     SECCIÓN STATS (cuadros de arriba)
+  ---------------------------------------------------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .stats__item {
+    background-color: #0c4e8b;
+    color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .stats__item h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+  .stats__item p {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* ----------------------------------------------------
+     TARJETAS PRINCIPALES
+  ---------------------------------------------------- */
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 200px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  
+  /* Felicidades Card */
+  .felicidades h3 {
+    margin-bottom: 0.5rem;
+  }
+  .felicidades__stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  .felicidades__stats > div h4 {
+    font-size: 1.5rem;
+    color: #0c4e8b;
+  }
+  .felicidades__img {
+    text-align: right;
+  }
+  
+  /* Resumen Semanal */
+  .resumen-semanal h3 {
+    margin-bottom: 0.5rem;
+  }
+  .chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    height: 120px;
+    margin-top: 1rem;
+  }
+  .chart__bar {
+    width: 20px;
+    background-color: #0c4e8b;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.7rem;
+    border-radius: 3px 3px 0 0;
+  }
+  
+  /* ----------------------------------------------------
+     SOLICITUDES
+  ---------------------------------------------------- */
+  .solicitudes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .solicitudes__block {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .card__header h3 {
+    font-size: 1.1rem;
+  }
+  .card__header a {
+    font-size: 0.9rem;
+    color: #0c4e8b;
+    text-decoration: none;
+  }
+  .solicitudes__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .solicitudes__item {
+    display: flex;
+    gap: 1rem;
+  }
+  .solicitudes__item div {
+    display: flex;
+    flex-direction: column;
+  }
+  .solicitudes__desc p {
+    font-weight: 500;
+  }
+  .urgente {
+    background-color: #0c4e8b;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  /* ----------------------------------------------------
+     RESPONSIVE
+  ---------------------------------------------------- */
+  @media (max-width: 992px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+    }
+    .solicitudes {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      position: absolute;
+      width: 200px;
+      transform: translateX(-100%);
+    }
+    .sidebar__toggle {
+      display: block;
+    }
+    .main-content {
+      margin-left: 0;
+    }
+    /* Podrías implementar la lógica JS para mostrar/ocultar sidebar */
+  }
+  
