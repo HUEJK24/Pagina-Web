@@ -1,26 +1,29 @@
 // Seleccionamos los radios
-const radioSignup = document.querySelector('input[value="signup"]');
-const radioLogin  = document.querySelector('input[value="login"]');
+const signupRadio = document.querySelector('input[value="signup"]');
+const signinRadio = document.querySelector('input[value="signin"]');
 
-// Seleccionamos los formularios
-const signupForm = document.getElementById('signupForm');
-const loginForm  = document.getElementById('loginForm');
+// Seleccionamos el contenedor de campos de nombres
+const nameFields = document.querySelector('.name-fields');
 
-// Al cargar la página, asignamos eventos a los radios
-radioSignup.addEventListener('change', () => {
-  if (radioSignup.checked) {
-    signupForm.classList.remove('hidden');
-    signupForm.classList.add('visible');
-    loginForm.classList.remove('visible');
-    loginForm.classList.add('hidden');
+// Seleccionamos el botón principal
+const submitBtn = document.getElementById('submitBtn');
+
+// Función para actualizar la vista
+function updateFormView() {
+  if (signupRadio.checked) {
+    // Crear cuenta
+    nameFields.classList.remove('hidden');    // Muestra nombres
+    submitBtn.textContent = 'Crear cuenta';   // Cambia el texto del botón
+  } else if (signinRadio.checked) {
+    // Iniciar sesión
+    nameFields.classList.add('hidden');       // Oculta nombres
+    submitBtn.textContent = 'Iniciar sesión'; // Cambia el texto del botón
   }
-});
+}
 
-radioLogin.addEventListener('change', () => {
-  if (radioLogin.checked) {
-    loginForm.classList.remove('hidden');
-    loginForm.classList.add('visible');
-    signupForm.classList.remove('visible');
-    signupForm.classList.add('hidden');
-  }
-});
+// Eventos cuando se cambia el radio
+signupRadio.addEventListener('change', updateFormView);
+signinRadio.addEventListener('change', updateFormView);
+
+// Al cargar la página, forzamos la actualización inicial
+updateFormView();
