@@ -1,4 +1,4 @@
-/* RESET */
+/* RESET BÁSICO */
 * {
     margin: 0;
     padding: 0;
@@ -7,104 +7,106 @@
   
   body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #121212; 
-    color: #fff;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  /* CONTENEDOR PRINCIPAL: DOS COLUMNAS */
+  .signup-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     min-height: 100vh;
   }
   
-  /* CONTENEDOR PRINCIPAL */
-  .container {
-    max-width: 500px;
-    width: 90%;
-    background-color: #1e1e1e;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  /* SECCIÓN IZQUIERDA: IMAGEN */
+  .left-image {
+    flex: 1;
+    overflow: hidden;
+  }
+  .left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   
-  .container h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #eaeaea;
-  }
-  
-  /* TOGGLE CREAR CUENTA / INICIAR SESIÓN */
-  .toggle-mode {
+  /* SECCIÓN DERECHA: FORMULARIO */
+  .right-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 3rem 2rem;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-form h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000; /* Texto oscuro */
+  }
+  
+  /* TOGGLE "CREAR CUENTA" / "INICIAR SESIÓN" */
+  .mode-toggle {
+    display: flex;
+    gap: 1rem;
     margin-bottom: 2rem;
   }
   
-  .toggle-option {
+  .mode-option {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.5rem;
     cursor: pointer;
   }
-  .toggle-option input[type="radio"] {
-    accent-color: #8f54e2; /* color principal para el radio */
+  
+  .mode-option input[type="radio"] {
+    accent-color: #7c4dff; /* Color principal (morado) */
+    width: 16px;
+    height: 16px;
   }
   
   /* FORMULARIO */
-  .form {
+  .signup-form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
   }
   
-  /* Oculto por defecto */
-  .hidden {
-    display: none;
-  }
-  .visible {
-    display: flex;
-  }
-  
-  /* CAMPOS */
+  /* GRUPOS DE FORMULARIO */
   .form-group {
     display: flex;
     flex-direction: column;
+    gap: 0.3rem;
   }
   
   .form-group label {
-    margin-bottom: 0.3rem;
     font-weight: 600;
+    color: #333;
     font-size: 0.95rem;
-    color: #ccc;
   }
   
   .form-group input {
-    background: transparent;
-    color: #fff;
-    border: 1px solid #66c;
-    padding: 0.7rem;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #90caf9; /* Borde azul claro */
     border-radius: 6px;
-    outline: none;
-    transition: border-color 0.2s;
     font-size: 0.95rem;
-  }
-  .form-group input::placeholder {
-    color: #888;
-  }
-  .form-group input:focus {
-    border-color: #8f54e2;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
   }
   
-  /* OLVIDASTE TU CONTRASEÑA */
-  .forgot-link {
-    text-align: right;
+  .form-group input::placeholder {
+    color: #9e9e9e;
   }
-  .forgot-link a {
-    color: #888;
-    font-size: 0.9rem;
-    text-decoration: none;
+  .form-group input:focus {
+    border-color: #7c4dff; /* Morado al enfocar */
   }
-  .forgot-link a:hover {
-    color: #ccc;
+  
+  .help-text {
+    font-size: 0.75rem;
+    color: #666;
   }
   
   /* BOTONES */
@@ -114,46 +116,44 @@
     margin-top: 1rem;
   }
   
-  /* Botón cancelar */
+  /* Botón "Cancelar" */
   .btn-cancel {
-    background-color: #b20a0a;
+    background-color: #f44336; /* rojo */
     color: #fff;
     border: none;
-    padding: 0.7rem 1.2rem;
     border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
-    font-weight: 600;
     transition: background-color 0.3s;
   }
   .btn-cancel:hover {
-    background-color: #961414;
+    background-color: #c62828;
   }
   
-  /* Botón primario (Crear cuenta / Iniciar sesión) */
-  .btn-primary {
-    background-color: #8f54e2;
+  /* Botón "Crear cuenta" */
+  .btn-create {
+    background-color: #7c4dff; /* morado */
     color: #fff;
     border: none;
-    padding: 0.7rem 1.2rem;
     border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
-    font-weight: 600;
     transition: background-color 0.3s;
   }
-  .btn-primary:hover {
-    background-color: #7842c0;
+  .btn-create:hover {
+    background-color: #651fff; 
   }
   
   /* RESPONSIVE */
-  @media (max-width: 480px) {
-    .toggle-mode {
+  @media (max-width: 900px) {
+    .signup-container {
       flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
     }
-    .buttons-group {
-      flex-direction: column;
-      gap: 0.5rem;
+    .left-image {
+      height: 300px;
+      flex: initial;
     }
   }
   
